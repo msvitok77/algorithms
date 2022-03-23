@@ -1,15 +1,18 @@
 """
 Heap sort implementation
 """
+
+
 def swap(a_list, first, second):
     """Swaps two values within the list"""
     a_list[first], a_list[second] = a_list[second], a_list[first]
+
 
 def heap_sort(a_list):
     """Main algorithm for heap sort"""
     length = len(a_list) - 1
     # index of node which is the last parent (has child/ children)
-    last_parent = length / 2
+    last_parent = length // 2
 
     for i in range(last_parent, -1, -1):
         heapify(a_list, i, length)
@@ -19,6 +22,7 @@ def heap_sort(a_list):
         if a_list[0] > a_list[i]:
             swap(a_list, 0, i)
             heapify(a_list, 0, i - 1)
+
 
 def heapify(a_list, first, last):
     """Rebuild the heap"""
@@ -40,4 +44,4 @@ def heapify(a_list, first, last):
 if __name__ == '__main__':
     A_LIST = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2, 5]
     heap_sort(A_LIST)
-    print A_LIST
+    print(A_LIST)

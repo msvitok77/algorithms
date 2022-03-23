@@ -2,6 +2,7 @@
 Merge sort implementation
 """
 
+
 def merge_sort(a_list, left, right):
     """Main algorithm for merge sort"""
     if left < right:
@@ -9,6 +10,7 @@ def merge_sort(a_list, left, right):
         merge_sort(a_list, left, middle)
         merge_sort(a_list, middle + 1, right)
         merge(a_list, left, middle, right)
+
 
 def merge(a_list, left, middle, right):
     """Merges two halves together"""
@@ -36,8 +38,9 @@ def merge(a_list, left, middle, right):
         a_list[left] = v
         left += 1
 
+
 if __name__ == '__main__':
     A_LIST = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2, 5]
     merge_sort(A_LIST, 0, len(A_LIST) - 1)
 
-    print A_LIST
+    print(A_LIST)

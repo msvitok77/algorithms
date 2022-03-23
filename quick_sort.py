@@ -1,7 +1,10 @@
 """ Quick sort algorithm """
+
+
 def swap(a_list, first, second):
     """Swaps two values within the list"""
     a_list[first], a_list[second] = a_list[second], a_list[first]
+
 
 def q_sort(a_list, left, right):
     """Quick sort algorithm"""
@@ -16,7 +19,8 @@ def q_sort(a_list, left, right):
         q_sort(a_list, left, pivot)
         q_sort(a_list, pivot + 1, right)
 
+
 if __name__ == '__main__':
     A_LIST = [8, 5, 3, 1, 9, 6, 0, 7, 4, 2, 5]
     q_sort(A_LIST, 0, len(A_LIST))
-    print A_LIST
+    print(A_LIST)
